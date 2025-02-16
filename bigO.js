@@ -32,4 +32,12 @@ function anotherFunChallenge(input) {
   let whoAmI = "I don't know"; // O(1)
 }
 
-// Big O(4 + 7n) -> 
+// Big O(4 + 7n) -> O(n)
+
+// Get All Pairs in The Array
+const arr = [1, 2, 3, 4, 5];
+for (let i = 0; i < arr.length; i++) {
+  for (let j = i + 1; j < arr.length; j++) {
+    console.log(arr[i], arr[j]);
+  }
+}
