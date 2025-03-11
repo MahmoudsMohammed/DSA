@@ -30,6 +30,16 @@ class MyArray {
       this.data[i] = this.data[i + 1];
     }
   }
+
+  insertItem(item, index) {
+    const newData = { ...this.data };
+    newData[index] = item;
+    console.log('New Data ===> ', newData);
+    for (let i = index; i < this.length; i++) {
+      newData[i + 1] = this.data[i];
+    }
+    this.data = newData;
+  }
 }
 
 const myArr = new MyArray();
@@ -38,5 +48,4 @@ myArr.push('b');
 myArr.push('c');
 myArr.push('d');
 myArr.push('e');
-myArr.deleteItem(2);
-console.log(myArr.data);
+myArr.insertItem('Mahmoud', 2);
