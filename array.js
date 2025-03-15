@@ -67,4 +67,47 @@ function reverseStrTwo(str) {
   return newStr;
 }
 
-console.log(reverseStrTwo('Hi My Name Is Mahmoud'));
+// console.log(reverseStrTwo('Hi My Name Is Mahmoud'));
+
+// Q2 : Merge 2 Sorted Array in One Array Sorted
+
+// Using JS Built in Methods
+function getSortedArray(arrOne, arrTwo) {
+  // first step which is input validation
+  if (Array.isArray(arrOne) && Array.isArray(arrTwo)) {
+    if (arrOne.length > 0 && arrTwo.length > 0) {
+      const mergedArr = [...arrOne, ...arrTwo];
+      return mergedArr.sort((a, b) => a - b);
+    } else {
+      return arrOne.length > 0 ? arrOne : arrTwo;
+    }
+  } else {
+    return 'Please Check Your Input :)';
+  }
+}
+
+// Manual Sort -> O(n*2)
+function getSortedArrayTwo(arrOne, arrTwo) {
+  // first step which is input validation
+  if (Array.isArray(arrOne) && Array.isArray(arrTwo)) {
+    if (arrOne.length > 0 && arrTwo.length > 0) {
+      const mergedArr = arrOne.concat(arrTwo);
+      for (let i = 0; i < mergedArr.length - 1; i++) {
+        for (let j = i + 1; j < mergedArr.length; j++) {
+          if (mergedArr[i] > mergedArr[j]) {
+            const smallValue = mergedArr[j];
+            mergedArr[j] = mergedArr[i];
+            mergedArr[i] = smallValue;
+          }
+        }
+      }
+      return mergedArr;
+    } else {
+      return arrOne.length > 0 ? arrOne : arrTwo;
+    }
+  } else {
+    return 'Please Check Your Input :)';
+  }
+}
+
+console.log(getSortedArrayTwo([], [4, 6, 1]));
