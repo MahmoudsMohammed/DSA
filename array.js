@@ -42,10 +42,29 @@ class MyArray {
   }
 }
 
-const myArr = new MyArray();
-myArr.push('a');
-myArr.push('b');
-myArr.push('c');
-myArr.push('d');
-myArr.push('e');
-myArr.insertItem('Mahmoud', 2);
+// const myArr = new MyArray();
+// myArr.push('a');
+// myArr.push('b');
+// myArr.push('c');
+// myArr.push('d');
+// myArr.push('e');
+// myArr.insertItem('Mahmoud', 2);
+
+// Interview Questions
+// Q1 : Write a function which reverse an string
+// Note => interact with string problems as array problems
+
+function reverseStr(str) {
+  // Solution One
+  return str.split('').reverse().join('');
+}
+
+function reverseStrTwo(str) {
+  let newStr = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    newStr += str[i];
+  }
+  return newStr;
+}
+
+console.log(reverseStrTwo('Hi My Name Is Mahmoud'));
