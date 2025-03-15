@@ -110,4 +110,33 @@ function getSortedArrayTwo(arrOne, arrTwo) {
   }
 }
 
-console.log(getSortedArrayTwo([], [4, 6, 1]));
+function getSortedArrayThree(arrOne, arrTwo) {
+  // first step which is input validation
+  if (Array.isArray(arrOne) && Array.isArray(arrTwo)) {
+    if (arrOne.length > 0 && arrTwo.length > 0) {
+      const mergedArr = [];
+      let firstItem = arrOne[0],
+        secItem = arrTwo[0],
+        i = 0,
+        j = 0;
+      while (firstItem || secItem) {
+        if (firstItem < secItem || !secItem) {
+          mergedArr.push(firstItem);
+          ++i;
+          firstItem = arrOne[i];
+        } else {
+          mergedArr.push(secItem);
+          ++j;
+          secItem = arrTwo[j];
+        }
+      }
+      return mergedArr;
+    } else {
+      return arrOne.length > 0 ? arrOne : arrTwo;
+    }
+  } else {
+    return 'Please Check Your Input :)';
+  }
+}
+
+console.log(getSortedArrayThree([0, 3, 4, 31], [1,3, 4,  30]));
