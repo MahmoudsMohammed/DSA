@@ -59,6 +59,7 @@ class HashTable {
 //It should return undefined
 
 function firstRecurringCharacter(input) {
+  // use hash table to avoid nested loop for search in the array
   const items = {};
   if (input.length === 0 || !Array.isArray(input)) {
     return undefined;
@@ -72,6 +73,8 @@ function firstRecurringCharacter(input) {
     }
   }
 }
+// time => O(n)
+// space => O(n)
 console.log(firstRecurringCharacter([2, 5, 5, 2, 3, 5, 1, 2, 4]));
 //Bonus... What if we had this:
 // [2,5,5,2,3,5,1,2,4]
