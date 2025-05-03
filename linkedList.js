@@ -14,26 +14,28 @@
 
 class LinkedList {
   constructor(value) {
-    this.head = {
-      value: value,
-      next: null,
-    };
+    this.head = new Node(value);
     this.tail = this.head;
     this.length = 1;
   }
   append(value) {
-    const node = {
-      value,
-      next: null,
-    };
+    const node = new Node(value);
     this.tail.next = node;
     this.tail = node;
     this.length++;
   }
   prepend(value) {
-    const newNode = { value: value, next: this.head };
+    const newNode = new Node(value);
+    newNode.next = this.head;
     this.head = newNode;
     this.length++;
+  }
+}
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
   }
 }
 
