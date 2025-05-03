@@ -60,6 +60,14 @@ class LinkedList {
     const node = this.traverseToIndex(index);
     return node ? node.value : 'Try Again ;)';
   }
+
+  remove(index) {
+    const prev = this.traverseToIndex(index - 1);
+    const rNode = prev.next;
+    prev.next = rNode.next;
+    this.length--;
+    return rNode.value;
+  }
 }
 
 class Node {
@@ -73,7 +81,9 @@ let myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.prepend(1);
-myLinkedList.insert(0, 20);
+myLinkedList.insert(2, 20);
+console.log(myLinkedList.printList());
+console.log(myLinkedList.remove(3));
 console.log(myLinkedList.printList());
 console.log(myLinkedList.lookup(myLinkedList.length - 1));
 console.log(myLinkedList);
