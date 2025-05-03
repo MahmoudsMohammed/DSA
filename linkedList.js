@@ -32,14 +32,18 @@ class LinkedList {
   }
 
   traverseToIndex(index) {
-    let currentNode = this.head,
-      counter = 0;
-    while (counter !== index) {
-      // shift current node to next node & increment counter
-      currentNode = currentNode.next;
-      ++counter;
+    if (index >= this.length) {
+      console.log('Needed Item Out of The Range');
+    } else {
+      let currentNode = this.head,
+        counter = 0;
+      while (counter !== index) {
+        // shift current node to next node & increment counter
+        currentNode = currentNode.next;
+        ++counter;
+      }
+      return currentNode;
     }
-    return currentNode;
   }
 
   printList() {
@@ -50,6 +54,11 @@ class LinkedList {
       currentNode = currentNode.next;
     }
     return values;
+  }
+
+  lookup(index) {
+    const node = this.traverseToIndex(index);
+    return node ? node.value : 'Try Again ;)';
   }
 }
 
@@ -66,4 +75,5 @@ myLinkedList.append(16);
 myLinkedList.prepend(1);
 myLinkedList.insert(0, 20);
 console.log(myLinkedList.printList());
+console.log(myLinkedList.lookup(myLinkedList.length - 1));
 console.log(myLinkedList);
