@@ -28,11 +28,17 @@ class LinkedList {
     };
     this.tail.next = node;
     this.tail = node;
-    this.length += 1;
+    this.length++;
+  }
+  prepend(value) {
+    const newNode = { value: value, next: this.head };
+    this.head = newNode;
+    this.length++;
   }
 }
 
 let myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(16);
+myLinkedList.prepend(1);
 console.log(myLinkedList);
