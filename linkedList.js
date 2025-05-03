@@ -1,17 +1,3 @@
-// // Create the below linked list:
-// // myLinkedList = {
-// //   head: {
-// //     value: 10
-// //     next: {
-// //       value: 5
-// //       next: {
-// //         value: 16
-// //         next: null
-// //       }
-// //     }
-// //   }
-// // };
-
 class LinkedList {
   constructor(value) {
     this.head = new Node(value);
@@ -30,6 +16,16 @@ class LinkedList {
     this.head = newNode;
     this.length++;
   }
+
+  printList() {
+    const values = [];
+    let currentNode = this.head;
+    while (currentNode) {
+      values.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    return values;
+  }
 }
 
 class Node {
@@ -43,4 +39,4 @@ let myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.prepend(1);
-console.log(myLinkedList);
+console.log(myLinkedList.printList());

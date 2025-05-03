@@ -13,6 +13,7 @@ class HashTable {
 
   set(key, value) {
     const location = this._hash(key);
+    // check for Collision
     if (!this.data[location]) {
       this.data[location] = [];
     }
