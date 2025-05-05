@@ -74,13 +74,36 @@ class LinkedList {
     this.length--;
     return rNode.value;
   }
+
+  reverse() {
+    if (!this.head.next) {
+      return this.head;
+    }
+    let current = this.head;
+    this.tail = this.head;
+    let nextNode = current.next;
+
+    while (nextNode) {
+      const temp = nextNode.next;
+      nextNode.next = current; // Swap pointer
+      current = nextNode; // Shift
+      nextNode = temp; // Shift
+    }
+
+    this.head.next = null; // Make the tail and head next is null
+    this.head = current; // Point head to first node
+    console.log(this);
+    return this.printList();
+  }
 }
 
-// let myLinkedList = new LinkedList(10);
-// myLinkedList.append(5);
-// myLinkedList.append(16);
-// myLinkedList.prepend(1);
-// myLinkedList.insert(2, 20);
+let myLinkedList = new LinkedList(10);
+myLinkedList.append(5);
+myLinkedList.append(16);
+myLinkedList.prepend(1);
+myLinkedList.insert(2, 20);
+myLinkedList.reverse();
+console.log(myLinkedList.printList());
 // console.log(myLinkedList.printList());
 // console.log(myLinkedList.remove(3));
 // console.log(myLinkedList.printList());
@@ -175,13 +198,13 @@ class DoublyLinkedList {
   }
 }
 
-let myDoublyLinkedList = new DoublyLinkedList(10);
-myDoublyLinkedList.append(5);
-myDoublyLinkedList.append(16);
-myDoublyLinkedList.prepend(1);
-myDoublyLinkedList.insert(2, 20);
-console.log(myDoublyLinkedList.printList());
-console.log(myDoublyLinkedList.remove(3));
-console.log(myDoublyLinkedList.printList());
-console.log(myDoublyLinkedList.lookup(myDoublyLinkedList.length - 1));
-console.log(myDoublyLinkedList);
+// let myDoublyLinkedList = new DoublyLinkedList(10);
+// myDoublyLinkedList.append(5);
+// myDoublyLinkedList.append(16);
+// myDoublyLinkedList.prepend(1);
+// myDoublyLinkedList.insert(2, 20);
+// console.log(myDoublyLinkedList.printList());
+// console.log(myDoublyLinkedList.remove(3));
+// console.log(myDoublyLinkedList.printList());
+// console.log(myDoublyLinkedList.lookup(myDoublyLinkedList.length - 1));
+// console.log(myDoublyLinkedList);
