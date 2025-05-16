@@ -56,15 +56,53 @@ class Stack {
 
 const myStack = new Stack();
 
-myStack.push('google');
-myStack.push('udemy');
-myStack.push('discord');
+// myStack.push('google');
+// myStack.push('udemy');
+// myStack.push('discord');
 
-console.log(myStack.peak());
-console.log(myStack.pop());
-console.log(myStack.pop());
-console.log(myStack.pop());
-console.log(myStack.peak());
-console.log(myStack);
+// console.log(myStack.peak());
+// console.log(myStack.pop());
+// console.log(myStack.pop());
+// console.log(myStack.pop());
+// console.log(myStack.peak());
+// console.log(myStack);
 // console.log(myStack.peak());
 // console.log(myStack.isEmpty());
+
+class StackOnArray {
+  constructor() {
+    this.items = [];
+  }
+
+  peak() {
+    return this.items[this.items.length - 1];
+  }
+
+  push(value) {
+    this.items.push(value);
+  }
+
+  pop() {
+    return this.items.pop();
+  }
+
+  isEmpty() {
+    return !!this.items.length;
+  }
+}
+
+const myStackTwo = new StackOnArray();
+
+myStackTwo.push('google');
+myStackTwo.push('udemy');
+myStackTwo.push('discord');
+
+console.log(myStackTwo.peak());
+console.log(myStackTwo);
+console.log(myStackTwo.pop());
+console.log(myStackTwo.pop());
+console.log(myStackTwo.pop());
+console.log(myStackTwo.peak());
+console.log(myStackTwo);
+console.log(myStackTwo.peak());
+console.log(myStackTwo.isEmpty());
