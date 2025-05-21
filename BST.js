@@ -10,7 +10,7 @@ class BST {
   constructor() {
     this.root = null;
   }
-
+ 
   insert(value) {
     let newNode = new TreeNode(value);
     let currentNode = this.root;
@@ -63,10 +63,10 @@ tree.insert(20);
 tree.insert(170);
 tree.insert(15);
 tree.insert(1);
+console.log(tree.lookup(170));
 // console.log(tree.root);
 // tree.remove(170);
 // console.log(JSON.stringify(traverse(tree.root)));
-console.log(tree.lookup(9));
 
 function traverse(node) {
   const tree = { value: node.value };
