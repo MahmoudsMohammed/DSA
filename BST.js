@@ -10,7 +10,7 @@ class BST {
   constructor() {
     this.root = null;
   }
- 
+
   insert(value) {
     let newNode = new TreeNode(value);
     let currentNode = this.root;
@@ -54,6 +54,8 @@ class BST {
     }
     return target;
   }
+
+  remove() {}
 }
 const tree = new BST();
 tree.insert(9);
