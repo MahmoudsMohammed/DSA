@@ -1,0 +1,43 @@
+// Factorial
+function factorialLooping(n) {
+  let res = 1;
+  for (let i = n; n > 1; n--) {
+    res *= n;
+  }
+  return res;
+}
+
+function factorialRecursion(n) {
+  if (n === 1) {
+    return n;
+  } else {
+    return n * factorialRecursion(n - 1);
+  }
+}
+
+// console.log(factorialLooping(5));
+
+// Fibonacci
+
+function fibonacciLoop(i) {
+  let fib = [0, 1];
+  if (fib[i]) {
+    return fib[i];
+  } else {
+    for (let x = 2; x <= i; x++) {
+      fib[x] = fib[x - 1] + fib[x - 2];
+    }
+    return fib[i];
+  }
+}
+
+// O(2^n) => Exponential Time  
+function fibonacciRecursive(i) {
+  if (i === 0 || i === 1) {
+    return i;
+  } else {
+    return fibonacciRecursive(i - 1) + fibonacciRecursive(i - 2);
+  }
+}
+
+console.log(fibonacciLoop(8));
