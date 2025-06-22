@@ -54,3 +54,24 @@ function fibonacciRecursive(i) {
 }
 
 // console.log(fibonacciLoop(8));
+
+// Reverse String
+
+function reverseIterate(str) {
+  let res = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    res += str[i];
+  }
+  return res;
+}
+
+// console.log(reverseIterate('yoyo master'));
+
+function reverseRecursion(str) {
+  if (str.length === 0) {
+    return '';
+  }
+  return str[str.length - 1] + reverseRecursion(str.slice(0, -1));
+}
+
+console.log(reverseRecursion('yoyo master'));
