@@ -1,3 +1,16 @@
+// Test Stack Over Flow
+let counter = 0;
+function test() {
+  ++counter;
+  // const arr = Array(100).fill(0);
+  test();
+}
+// try {
+//   test();
+// } catch (err) {
+//   console.log(`Stack Over Flow Function Calls Are ${counter}`);
+// }
+
 // Factorial
 function factorialLooping(n) {
   let res = 1;
@@ -31,7 +44,7 @@ function fibonacciLoop(i) {
   }
 }
 
-// O(2^n) => Exponential Time  
+// O(2^n) => Exponential Time
 function fibonacciRecursive(i) {
   if (i === 0 || i === 1) {
     return i;
@@ -40,4 +53,4 @@ function fibonacciRecursive(i) {
   }
 }
 
-console.log(fibonacciLoop(8));
+// console.log(fibonacciLoop(8));
